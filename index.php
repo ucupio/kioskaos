@@ -1,4 +1,4 @@
-<? php
+<?php
 
 $server_key = "SB-Mid-server-BLCWq2CRKpRgA3V-aMEQIh1s";
 
