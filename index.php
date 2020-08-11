@@ -41,7 +41,7 @@ CURLOPT_HTTPHEADER => array(
 ),
 CURLOPT_POSTFIELDS => $request_body
 );
-curl_setopt_array(CURL_GETINFO($ch, $curl_options);
+curl_setopt_array($ch, $curl_options);
 $result = array(
 'body' => curl_exec($ch),
 'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE),
