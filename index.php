@@ -1,6 +1,6 @@
 <? php
 
-$server_key = "Past_server_key";
+$server_key = "SB-Mid-server-BLCWq2CRKpRgA3V-aMEQIh1s";
 
 $is_production = false;
 $api_url = $is_production ? 'url_production' : 'url_sandbox';
