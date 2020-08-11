@@ -3,9 +3,10 @@
 $server_key = "SB-Mid-server-BLCWq2CRKpRgA3V-aMEQIh1s";
 
 $is_production = false;
-$api_url = $is_production ? 'url_production' : 'url_sandbox';
+$api_url = $is_production ? 
+'https://app.midtrans.com/snap/v1/transactions' : 'https://app.sandbox.midtrans.com/snap/v1/transactions';
 
-if($_SERVER[REQUEST_URI] !== '/charge'){
+if(!strops($_SERVER[REQUEST_URI], '/charge')){
 http_response_code(404);
 echo "wrong path make sure its '/charge'"; exit();
 }
@@ -31,6 +32,7 @@ CURLOPT_URL => $API_URL,
 CURLOPT_RETURNTRANSFER => 1,
 CURLOPT_POST=> 1,
 CURLOPT_HEADER => 0,
+
 CURLOPT_HTTPHEADER => ARRAY(
 'Content-Type: application/json',
 'Accept: application/json',
