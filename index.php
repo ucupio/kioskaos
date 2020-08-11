@@ -6,7 +6,7 @@ $is_production = false;
 $api_url = $is_production ? 
 'https://app.midtrans.com/snap/v1/transactions' : 'https://app.sandbox.midtrans.com/snap/v1/transactions';
 
-if(!strops($_SERVER[REQUEST_URI], '/charge')){
+if(!strpos($_SERVER[REQUEST_URI], '/charge')){
 http_response_code(404);
 echo "wrong path make sure its '/charge'"; exit();
 }
@@ -28,7 +28,7 @@ echo $charge_result['body'];
 function chargeAPI($api_url,$server_key, $request_body){
 $ch = curl_init();
 $curl_options = array(
-CURLOPT_URL => $API_URL,
+CURLOPT_URL => $api_url,
 CURLOPT_RETURNTRANSFER => 1,
 CURLOPT_POST=> 1,
 CURLOPT_HEADER => 0,
